@@ -1,4 +1,4 @@
-# Reactprac
+# Text Analyzer
 #REACT #REACT_ROUTER
 This is a text analyzer application completely built using REACT.js 
 The application has two sections:-
