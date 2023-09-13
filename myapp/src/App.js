@@ -32,7 +32,7 @@ const toggleMode = () =>{
     <div className='container'>
     <Routes>
           <Route path="/" element={<TextArea mode={mode} togglemode={toggleMode}/>} />
-          <Route path="/about" element= {<About />} />
+          <Route path="/about" element= {<About mode={mode} />} />
       
           
     </Routes>
