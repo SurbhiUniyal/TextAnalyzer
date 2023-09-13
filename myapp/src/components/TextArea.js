@@ -6,10 +6,21 @@ export default function TextArea(props){
         let newText= text.toUpperCase();
         setText(newText);
     }
+    const speak = () => {
+        let msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        window.speechSynthesis.speak(msg);
+    }
     const handleloChange = () =>{
         let newText= text.toLowerCase();
         setText(newText);
     }
+    const replacecasefunc = () => {
+        let existing_text = prompt("Enter which word to replace : ");
+        let replaced_text = prompt("Enter New Text");
+        setText(text.replaceAll(existing_text, replaced_text))
+      }
+    
     const handleChange = (event) =>{
         setText(event.target.value);
     }
@@ -33,6 +44,9 @@ export default function TextArea(props){
   <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleclearChange}>Clear Text</button>
   <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handlecaprChange}>Capitalization</button>
   <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={handleCopy}>Copy</button>
+  <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={speak}>Speak</button>
+  <button disabled={text.length===0} className="btn btn-success mx-2 my-2" onClick={replacecasefunc}>Replace</button>
+  
 </div>
 
 <div className="container" style={{color:props.mode==='dark'?"white":"black"}}>
